@@ -1,0 +1,34 @@
+{
+  "name": "ui-kit",
+  "version": "0.0.1",
+  "description": "Reusable UI components based on Headless/Tailwind UI.",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx rimraf ./lib && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/om-network/ui-kit.git"
+  },
+  "author": "Long Nguyen",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/om-network/ui-kit/issues"
+  },
+  "homepage": "https://github.com/om-network/ui-kit#readme",
+  "devDependencies": {
+    "@types/classnames": "^2.3.1",
+    "@types/react": "^17.0.5",
+    "@types/react-dom": "^17.0.5",
+    "rimraf": "^3.0.2",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.2.0",
+    "classnames": "^2.3.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.6.0"
+  }
+}
