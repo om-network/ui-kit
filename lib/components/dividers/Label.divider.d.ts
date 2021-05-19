@@ -1,5 +1,5 @@
 /// <reference types="react" />
-interface LabelDividerProps {
+export interface LabelDividerProps {
     text: string;
 }
 export declare const LabelDivider: ({ text }: LabelDividerProps) => JSX.Element;

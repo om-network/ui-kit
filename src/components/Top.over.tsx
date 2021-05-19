@@ -2,12 +2,12 @@ import { Transition } from "@headlessui/react";
 import classNames from "classnames";
 import React, { Fragment, ReactNode } from "react";
 
-interface TopOverProps {
+export interface TopOverProps {
   children: ReactNode;
   width?: "max-w-sm" | "max-w-md" | "max-w-full";
 }
 
-interface TopOverHeaderProps {
+export interface TopOverHeaderProps {
   title?: string;
   description?: string;
 }

@@ -1,6 +1,6 @@
 import { TextareaHTMLAttributes } from "react";
 import { UseFormReturn } from "react-hook-form";
-interface TextareaFieldProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
+export interface TextareaFieldProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
     formRef: UseFormReturn<any>;
     name: string;
     label: string;
