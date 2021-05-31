@@ -4,7 +4,7 @@ import React from "react";
 import { RadioGroupField, RadioGroupFieldProps } from "../../components/fields/RadioGroup.field";
 
 export default {
-  title: "Example/RadioGroupField",
+  title: "Example/Fields/RadioGroupField",
   component: RadioGroupField,
 } as Meta;
 

@@ -1,10 +1,10 @@
 import { Meta, Story } from "@storybook/react";
 import React from "react";
 
-import { TopOver, TopOverHeader, TopOverProps } from "../components/Top.over";
+import { TopOver, TopOverHeader, TopOverProps } from "../../components/Top.over";
 
 export default {
-  title: "Example/TopOver",
+  title: "Example/Overs/TopOver",
   component: TopOver,
 } as Meta;
 

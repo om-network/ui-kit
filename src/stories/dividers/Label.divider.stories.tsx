@@ -4,7 +4,7 @@ import React from "react";
 import { LabelDivider, LabelDividerProps } from "../../components/dividers/Label.divider";
 
 export default {
-  title: "Example/LabelDivider",
+  title: "Example/Dividers/LabelDivider",
   component: LabelDivider,
 } as Meta;
 

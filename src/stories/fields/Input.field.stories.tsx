@@ -4,7 +4,7 @@ import React from "react";
 import { InputField, InputFieldProps } from "../../components/fields/Input.field";
 
 export default {
-  title: "Example/InputField",
+  title: "Example/Fields/InputField",
   component: InputField,
 } as Meta;
 

@@ -1,10 +1,10 @@
 import { Meta, Story } from "@storybook/react";
 import React from "react";
 
-import { SlideOver, SlideOverFooter, SlideOverHeader, SlideOverProps } from "../components/Slide.over";
+import { SlideOver, SlideOverFooter, SlideOverHeader, SlideOverProps } from "../../components/Slide.over";
 
 export default {
-  title: "Example/SlideOver",
+  title: "Example/Overs/SlideOver",
   component: SlideOver,
 } as Meta;
 

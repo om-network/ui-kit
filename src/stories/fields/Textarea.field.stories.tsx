@@ -4,7 +4,7 @@ import React from "react";
 import { TextareaField, TextareaFieldProps } from "../../components/fields/Textarea.field";
 
 export default {
-  title: "Example/TextareaField",
+  title: "Example/Fields/TextareaField",
   component: TextareaField,
 } as Meta;
 
