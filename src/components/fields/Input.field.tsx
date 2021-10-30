@@ -1,4 +1,4 @@
-import React from "react";
+import * as React from "react";
 import { InputHTMLAttributes } from "react";
 import { UseFormReturn } from "react-hook-form";
 
