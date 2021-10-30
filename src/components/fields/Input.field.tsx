@@ -1,8 +1,7 @@
 import * as React from "react";
-import { InputHTMLAttributes } from "react";
 import { UseFormReturn } from "react-hook-form";
 
-export interface InputFieldProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
   formRef: UseFormReturn<any>;
   name: string;
   label: string;
