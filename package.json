@@ -1,5 +1,5 @@
 {
-  "name": "@om-network/ui-kit",
+  "name": "@om-network/uikit",
   "version": "0.0.1",
   "description": "Reusable UI components based on Headless/Tailwind UI.",
   "main": "lib/index.js",
