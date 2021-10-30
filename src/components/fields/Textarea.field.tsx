@@ -1,8 +1,8 @@
-import React, { TextareaHTMLAttributes } from "react";
-import { UseFormReturn } from "react-hook-form";
+import * as React from "react";
+import * as Rhf from "react-hook-form";
 
-export interface TextareaFieldProps extends TextareaHTMLAttributes<HTMLTextAreaElement> {
-  formRef: UseFormReturn<any>;
+export interface TextareaFieldProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  formRef: Rhf.UseFormReturn<any>;
   name: string;
   label: string;
   subLabel?: string;

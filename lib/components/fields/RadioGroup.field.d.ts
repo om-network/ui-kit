@@ -1,7 +1,7 @@
 /// <reference types="react" />
-import { UseFormReturn } from "react-hook-form";
+import * as Rhf from "react-hook-form";
 export interface RadioGroupFieldProps {
-    formRef: UseFormReturn<any>;
+    formRef: Rhf.UseFormReturn<any>;
     disabled?: boolean;
     name: string;
     heading: string;
@@ -14,7 +14,7 @@ export interface RadioGroupFieldProps {
     }>;
 }
 export interface RadioGroupFieldItemProps {
-    formRef: UseFormReturn<any>;
+    formRef: Rhf.UseFormReturn<any>;
     name: string;
     disabled?: boolean;
     itemname: string;

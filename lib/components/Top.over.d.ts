@@ -1,6 +1,6 @@
-import { ReactNode } from "react";
+import * as React from "react";
 export interface TopOverProps {
-    children: ReactNode;
+    children: React.ReactNode;
     width?: "max-w-sm" | "max-w-md" | "max-w-full";
 }
 export interface TopOverHeaderProps {

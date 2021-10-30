@@ -1,18 +1,18 @@
-import { CloudUploadIcon, TrashIcon } from "@heroicons/react/outline";
+import * as Hi from "@heroicons/react/outline";
 import classNames from "classnames";
-import React, { FunctionComponent, MouseEvent, useCallback, useEffect } from "react";
-import { DropzoneOptions, useDropzone } from "react-dropzone";
-import { UseFormReturn } from "react-hook-form";
+import * as React from "react";
+import * as Rd from "react-dropzone";
+import * as Rhf from "react-hook-form";
 
 export interface FileUploadFieldProps {
-  formRef: UseFormReturn<any>;
+  formRef: Rhf.UseFormReturn<any>;
   name: string;
   label: string;
   preview?: {
     name?: string;
     url: string;
   };
-  options?: DropzoneOptions;
+  options?: Rd.DropzoneOptions;
   fieldClasses?: string;
   fileFormatLabel?: string;
   dropFileLabel?: string;
@@ -22,7 +22,7 @@ export interface FileUploadFieldProps {
 
 export interface FileUploadFieldDispatch {
   onFileChange?: (file: File) => void;
-  onClear?: (e: MouseEvent<HTMLButtonElement>) => void;
+  onClear?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 interface ClearButtonProps {
@@ -30,10 +30,10 @@ interface ClearButtonProps {
 }
 
 interface ClearButtonDispatch {
-  onClear?: (e: MouseEvent<HTMLButtonElement>) => void;
+  onClear?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
-const ClearButton: FunctionComponent<ClearButtonProps & ClearButtonDispatch> = ({ onClear, label = "Clear" }) => {
+const ClearButton: React.FunctionComponent<ClearButtonProps & ClearButtonDispatch> = ({ onClear, label = "Clear" }) => {
   const btnClasses = classNames(
     "inline-flex items-center px-3 py-1 border border-transparent text-sm leading-4 font-medium rounded-md",
     "text-gray-700 bg-white transition ease-in-out duration-150",
@@ -42,14 +42,14 @@ const ClearButton: FunctionComponent<ClearButtonProps & ClearButtonDispatch> = (
   return (
     <div className="absolute bottom-0 right-0 mr-1 mb-1">
       <button onClick={onClear} type="button" className={btnClasses}>
-        <TrashIcon className="-ml-0.5 mr-2 h-4 w-4" />
+        <Hi.TrashIcon className="-ml-0.5 mr-2 h-4 w-4" />
         {label}
       </button>
     </div>
   );
 };
 
-export const FileUploadField: FunctionComponent<FileUploadFieldProps & FileUploadFieldDispatch> = ({
+export const FileUploadField: React.FunctionComponent<FileUploadFieldProps & FileUploadFieldDispatch> = ({
   label,
   options = { accept: "image/png, image/jpeg, image/gif", maxSize: 2000000 },
   fieldClasses = "my-0",
@@ -78,7 +78,7 @@ export const FileUploadField: FunctionComponent<FileUploadFieldProps & FileUploa
     onClear = () => setValue(name, undefined);
   }
 
-  const onDrop = useCallback(
+  const onDrop = React.useCallback(
     (acceptedFiles) => {
       if (onFileChange) {
         onFileChange(acceptedFiles[0]);
@@ -87,7 +87,7 @@ export const FileUploadField: FunctionComponent<FileUploadFieldProps & FileUploa
     [onFileChange]
   );
 
-  const { getRootProps, getInputProps, isDragActive } = useDropzone({ ...options, onDrop });
+  const { getRootProps, getInputProps, isDragActive } = Rd.useDropzone({ ...options, onDrop });
   let file = watch(name);
   let preview = _preview;
 
@@ -102,9 +102,8 @@ export const FileUploadField: FunctionComponent<FileUploadFieldProps & FileUploa
     file.preview = URL.createObjectURL(file);
   }
 
-  console.log("FILE", file);
 
-  useEffect(
+  React.useEffect(
     () => () => {
       // revoke the data uris to avoid memory leaks
       if (file) {
@@ -136,7 +135,7 @@ export const FileUploadField: FunctionComponent<FileUploadFieldProps & FileUploa
       {!preview && !file && (
         <div {...getRootProps()} className={rootClasses}>
           <div className="text-center">
-            <CloudUploadIcon className="mx-auto h-8 w-8 text-gray-400" />
+            <Hi.CloudUploadIcon className="mx-auto h-8 w-8 text-gray-400" />
             <p className="mt-1 text-sm text-gray-600">
               {isDragActive && <span>{dropFileLabel}</span>}
               {!isDragActive && (

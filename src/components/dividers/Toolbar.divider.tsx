@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import React, { FunctionComponent, MouseEvent, ReactNode, useState } from "react";
+import * as React from "react";
 
 export interface ToolbarButtonProps {
   index?: number;
@@ -18,10 +18,10 @@ export interface ToolbarButtonDispatch {
 export interface ToolbarDividerProps {
   menu: Array<ToolbarButtonProps>;
   toolBarClasses?: string;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
-export const ToolbarButton: FunctionComponent<ToolbarButtonProps & ToolbarButtonDispatch> = ({
+export const ToolbarButton: React.FunctionComponent<ToolbarButtonProps & ToolbarButtonDispatch> = ({
   label,
   onTabClick,
   first = false,
@@ -42,7 +42,7 @@ export const ToolbarButton: FunctionComponent<ToolbarButtonProps & ToolbarButton
     }
   );
 
-  const onButtonClick = (evt: MouseEvent<HTMLButtonElement>) => {
+  const onButtonClick = (evt: React.MouseEvent<HTMLButtonElement>) => {
     evt.preventDefault();
     if (onTabClick) {
       onTabClick(index);
@@ -57,8 +57,8 @@ export const ToolbarButton: FunctionComponent<ToolbarButtonProps & ToolbarButton
   );
 };
 
-export const ToolbarDivider: FunctionComponent<ToolbarDividerProps> = ({ toolBarClasses = "mt-4", children, menu }) => {
-  const [tabNumber, setTabNumber] = useState<number>(0);
+export const ToolbarDivider: React.FunctionComponent<ToolbarDividerProps> = ({ toolBarClasses = "mt-4", children, menu }) => {
+  const [tabNumber, setTabNumber] = React.useState<number>(0);
   const containerClasses = classNames("relative", toolBarClasses);
   const menuLength = menu.length;
 

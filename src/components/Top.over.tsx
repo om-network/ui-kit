@@ -1,9 +1,9 @@
-import { Transition } from "@headlessui/react";
+import * as Hui from "@headlessui/react";
 import classNames from "classnames";
-import React, { Fragment, ReactNode } from "react";
+import * as React from "react";
 
 export interface TopOverProps {
-  children: ReactNode;
+  children: React.ReactNode;
   width?: "max-w-sm" | "max-w-md" | "max-w-full";
 }
 
@@ -24,11 +24,11 @@ export const TopOverHeader = ({ title, description }: TopOverHeaderProps) => (
 );
 
 export const TopOver = ({ children, width = "max-w-md" }: TopOverProps) => (
-  <Transition.Root show as={Fragment}>
+  <Hui.Transition.Root show as={React.Fragment}>
     <div className="absolute inset-0 overflow-hidden bg-gray-50 bg-opacity-80">
       <div className="sticky inset-y-0 max-w-full top-0 flex flex-col items-center">
-        <Transition.Child
-          as={Fragment}
+        <Hui.Transition.Child
+          as={React.Fragment}
           enter="transform transition ease-in-out duration-500 sm:duration-700"
           enterFrom="-translate-y-full"
           enterTo="translate-y-0"
@@ -37,10 +37,10 @@ export const TopOver = ({ children, width = "max-w-md" }: TopOverProps) => (
           leaveTo="translate-y-0"
         >
           <div className={classNames("w-screen", width)}>{children}</div>
-        </Transition.Child>
+        </Hui.Transition.Child>
       </div>
     </div>
-  </Transition.Root>
+  </Hui.Transition.Root>
 );
 
 export default TopOver;

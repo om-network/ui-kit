@@ -1,9 +1,8 @@
-import { MinusCircleIcon, PlusIcon, SelectorIcon } from "@heroicons/react/outline";
+import * as Hi from "@heroicons/react/outline";
 import classNames from "classnames";
 import { range } from "lodash";
-import React from "react";
-import { FieldsetHTMLAttributes, HTMLAttributes, ReactNode, useEffect, useState } from "react";
-import { useFieldArray, UseFormReturn } from "react-hook-form";
+import * as React from "react";
+import * as Rhf from "react-hook-form";
 
 export interface LinkItem {
   label: string;
@@ -16,15 +15,15 @@ export interface ResourceItem {
   items: Array<LinkItem>;
 }
 
-export interface ListItemsFieldProps extends HTMLAttributes<HTMLDivElement> {
-  formRef: UseFormReturn<any>;
+export interface ListItemsFieldProps extends React.HTMLAttributes<HTMLDivElement> {
+  formRef: Rhf.UseFormReturn<any>;
   name: string;
   label?: string;
   max?: number;
   canCollapse?: boolean;
   collapsed?: boolean;
   subLabel?: string;
-  children?: ReactNode;
+  children?: React.ReactNode;
   wrapperClasses?: string;
 }
 
@@ -33,8 +32,8 @@ export interface ListItemsFieldDispatch {
   onRemove?: (index: number) => void;
 }
 
-interface ItemFieldProps extends FieldsetHTMLAttributes<HTMLFieldSetElement> {
-  formRef: UseFormReturn<any>;
+interface ItemFieldProps extends React.FieldsetHTMLAttributes<HTMLFieldSetElement> {
+  formRef: Rhf.UseFormReturn<any>;
   itemClasses?: string;
   index?: number;
   name: string;
@@ -45,10 +44,10 @@ interface ItemFieldProps extends FieldsetHTMLAttributes<HTMLFieldSetElement> {
   urlPlaceholderLabel?: string;
 }
 
-interface ListItemsFieldToolbarProps extends HTMLAttributes<HTMLDivElement> {
+interface ListItemsFieldToolbarProps extends React.HTMLAttributes<HTMLDivElement> {
   last?: boolean;
   index: number;
-  children: ReactNode;
+  children: React.ReactNode;
 }
 
 const FieldsetField = ({
@@ -109,9 +108,9 @@ export const ListItemsFieldToolbar = ({
     {children}
     <label htmlFor="action" className="ml-2">
       <span>
-        {last && <PlusIcon className="h-6 w-6 text-gray-400 hover:text-gray-600 cursor-pointer" onClick={onAdd} />}
+        {last && <Hi.PlusIcon className="h-6 w-6 text-gray-400 hover:text-gray-600 cursor-pointer" onClick={onAdd} />}
         {!last && (
-          <MinusCircleIcon
+          <Hi.MinusCircleIcon
             className="h-6 w-6 text-red-800 hover:text-red-600 cursor-pointer"
             onClick={() => onRemove && onRemove(index)}
           />
@@ -133,13 +132,13 @@ export const ListItemsField = (props: ListItemsFieldProps & ListItemsFieldDispat
     collapsed = false,
     canCollapse = false,
   } = props;
-  const [open, setOpen] = useState<boolean>(!collapsed);
-  const { fields, append, remove } = useFieldArray({
+  const [open, setOpen] = React.useState<boolean>(!collapsed);
+  const { fields, append, remove } = Rhf.useFieldArray({
     control: formRef.control,
     name,
   });
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (fields === undefined || fields.length === 0) {
       const defaultValues = range(max).map(() => [{ label: "", url: "" }]);
       formRef.setValue(name, defaultValues);
@@ -154,7 +153,7 @@ export const ListItemsField = (props: ListItemsFieldProps & ListItemsFieldDispat
           <p className="text-xs text-gray-600">{subLabel}</p>
           {canCollapse && (
             <span aria-hidden onClick={() => setOpen(!open)}>
-              <SelectorIcon className="w-6 h-6 text-gray-600 cursor-pointer" />
+              <Hi.SelectorIcon className="w-6 h-6 text-gray-600 cursor-pointer" />
             </span>
           )}
         </div>

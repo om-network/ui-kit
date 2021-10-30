@@ -1,16 +1,16 @@
-import { ReactNode } from "react";
+import * as React from "react";
 export interface SlideOverProps {
     onClose: () => void;
-    children: ReactNode;
+    children: React.ReactNode;
 }
 export interface SlideOverFooterProps {
-    children: ReactNode;
+    children: React.ReactNode;
     className?: string;
 }
 export interface SlideOverHeaderProps {
     title: string;
     description?: string;
-    children?: ReactNode;
+    children?: React.ReactNode;
 }
 export declare const SlideOverHeader: ({ title, description, children }: SlideOverHeaderProps) => JSX.Element;
 export declare const SlideOverFooter: ({ children, className }: SlideOverFooterProps) => JSX.Element;

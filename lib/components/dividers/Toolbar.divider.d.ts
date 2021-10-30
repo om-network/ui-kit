@@ -1,4 +1,4 @@
-import React, { FunctionComponent, ReactNode } from "react";
+import * as React from "react";
 export interface ToolbarButtonProps {
     index?: number;
     first?: boolean;
@@ -14,7 +14,7 @@ export interface ToolbarButtonDispatch {
 export interface ToolbarDividerProps {
     menu: Array<ToolbarButtonProps>;
     toolBarClasses?: string;
-    children: ReactNode;
+    children: React.ReactNode;
 }
-export declare const ToolbarButton: FunctionComponent<ToolbarButtonProps & ToolbarButtonDispatch>;
-export declare const ToolbarDivider: FunctionComponent<ToolbarDividerProps>;
+export declare const ToolbarButton: React.FunctionComponent<ToolbarButtonProps & ToolbarButtonDispatch>;
+export declare const ToolbarDivider: React.FunctionComponent<ToolbarDividerProps>;

@@ -1,15 +1,15 @@
-import { FunctionComponent, MouseEvent } from "react";
-import { DropzoneOptions } from "react-dropzone";
-import { UseFormReturn } from "react-hook-form";
+import * as React from "react";
+import * as Rd from "react-dropzone";
+import * as Rhf from "react-hook-form";
 export interface FileUploadFieldProps {
-    formRef: UseFormReturn<any>;
+    formRef: Rhf.UseFormReturn<any>;
     name: string;
     label: string;
     preview?: {
         name?: string;
         url: string;
     };
-    options?: DropzoneOptions;
+    options?: Rd.DropzoneOptions;
     fieldClasses?: string;
     fileFormatLabel?: string;
     dropFileLabel?: string;
@@ -18,7 +18,7 @@ export interface FileUploadFieldProps {
 }
 export interface FileUploadFieldDispatch {
     onFileChange?: (file: File) => void;
-    onClear?: (e: MouseEvent<HTMLButtonElement>) => void;
+    onClear?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
-export declare const FileUploadField: FunctionComponent<FileUploadFieldProps & FileUploadFieldDispatch>;
+export declare const FileUploadField: React.FunctionComponent<FileUploadFieldProps & FileUploadFieldDispatch>;
 export default FileUploadField;
