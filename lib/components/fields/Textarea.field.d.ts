@@ -5,10 +5,9 @@ export interface TextareaFieldProps extends React.TextareaHTMLAttributes<HTMLTex
     name: string;
     label: string;
     subLabel?: string;
+    disabled?: boolean;
     wrapperClasses?: string;
-    t?: (key: string, values?: {
-        [key: string]: any;
-    }) => string;
+    validationErrorLabel?: string;
 }
 export declare const TextareaField: (props: TextareaFieldProps) => JSX.Element;
 export default TextareaField;

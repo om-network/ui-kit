@@ -1,9 +1,9 @@
 import classNames from "classnames";
 import * as React from "react";
-import { UseFormReturn } from "react-hook-form";
+import * as Rhf from "react-hook-form";
 
 export interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  formRef: UseFormReturn<any>;
+  formRef: Rhf.UseFormReturn<any>;
   name: string;
   label: string;
   disabled?: boolean;
