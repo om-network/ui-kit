@@ -1,6 +1,6 @@
 {
   "name": "@om-network/uikit",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Reusable UI components based on Headless/Tailwind UI.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -46,7 +46,7 @@
     "@tailwindcss/forms": "^0.3.2",
     "@tailwindcss/typography": "^0.4.1",
     "classnames": "^2.3.1",
-    "lodash": "^4.17.21",
+    "lodash.range": "^3.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-dropzone": "^11.3.2",
