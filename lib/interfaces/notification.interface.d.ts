@@ -16,6 +16,5 @@ export interface Notification {
 export interface NotificationProps extends Notification {
     closeLabel?: string;
     timer?: number;
-    closeLabel?: string;
     onClose: (id: string) => void;
 }
