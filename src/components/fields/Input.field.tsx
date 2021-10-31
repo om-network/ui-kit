@@ -13,7 +13,7 @@ export interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElem
 }
 
 export const InputField = (props: InputFieldProps) => {
-  const { formRef, label, subLabel, name,disabled = false, wrapperClasses: classes = "", validationErrorLabel = "A validation error has occurred", ...inputProps } = props;
+  const { formRef, label, subLabel, name, disabled = false, wrapperClasses: classes = "", validationErrorLabel = "A validation error has occurred", ...inputProps } = props;
 
   const {
     formState: { errors },

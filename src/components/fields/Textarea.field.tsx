@@ -13,7 +13,7 @@ export interface TextareaFieldProps extends React.TextareaHTMLAttributes<HTMLTex
 }
 
 export const TextareaField = (props: TextareaFieldProps) => {
-  const { formRef, label, subLabel, name, wrapperClasses: classes, disabled = false,validationErrorLabel = "A validation error has occurred", ...textareaProps } = props;
+  const { formRef, label, subLabel, name, wrapperClasses: classes, disabled = false, validationErrorLabel = "A validation error has occurred", ...textareaProps } = props;
 
   const {
     formState: { errors },
