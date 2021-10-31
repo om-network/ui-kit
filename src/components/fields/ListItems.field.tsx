@@ -1,6 +1,6 @@
 import * as Hi from "@heroicons/react/outline";
 import classNames from "classnames";
-import { range } from "lodash";
+import * as L from "lodash";
 import * as React from "react";
 import * as Rhf from "react-hook-form";
 
@@ -140,7 +140,7 @@ export const ListItemsField = (props: ListItemsFieldProps & ListItemsFieldDispat
 
   React.useEffect(() => {
     if (fields === undefined || fields.length === 0) {
-      const defaultValues = range(max).map(() => [{ label: "", url: "" }]);
+      const defaultValues = L.range(max).map(() => [{ label: "", url: "" }]);
       formRef.setValue(name, defaultValues);
     }
   }, [fields]);
