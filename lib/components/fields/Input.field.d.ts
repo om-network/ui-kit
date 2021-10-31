@@ -4,11 +4,10 @@ export interface InputFieldProps extends React.InputHTMLAttributes<HTMLInputElem
     formRef: UseFormReturn<any>;
     name: string;
     label: string;
+    disabled?: boolean;
     subLabel?: string;
     wrapperClasses?: string;
-    t?: (key: string, values?: {
-        [key: string]: any;
-    }) => string;
+    validationErrorLabel?: string;
 }
 export declare const InputField: (props: InputFieldProps) => JSX.Element;
 export default InputField;
