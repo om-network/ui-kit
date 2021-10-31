@@ -1,4 +1,5 @@
 export * from "./interfaces/notification.interface";
+export * from "./enums/notificationType.enum";
 export * from "./enums/intentType.enum";
 export * from "./enums/positionType.enum";
 
