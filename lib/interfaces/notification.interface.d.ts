@@ -1,12 +1,5 @@
 import { IntentType } from "../enums/intentType.enum";
-export declare enum NotificationType {
-    simple = "simple",
-    condensed = "condensed",
-    action = "action",
-    avatar = "avatar",
-    split = "split",
-    below = "below"
-}
+import { NotificationType } from "../enums/notificationType.enum";
 export interface Notification {
     type?: NotificationType;
     intent?: IntentType;
