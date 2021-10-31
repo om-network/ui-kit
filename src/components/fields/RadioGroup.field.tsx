@@ -19,7 +19,6 @@ export interface RadioGroupFieldItemProps {
   itemname: string;
   title: string;
   description: string;
-  t?: (key: string, values?: { [key: string]: any }) => string;
 }
 
 export const RadioGroupFieldItem = ({

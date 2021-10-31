@@ -20,9 +20,6 @@ export interface RadioGroupFieldItemProps {
     itemname: string;
     title: string;
     description: string;
-    t?: (key: string, values?: {
-        [key: string]: any;
-    }) => string;
 }
 export declare const RadioGroupFieldItem: ({ formRef, title, disabled, description, itemname, name, }: RadioGroupFieldItemProps) => JSX.Element;
 export declare const RadioGroupField: ({ name, wrapperClasses: classes, heading, disabled, formRef, options, subheading, }: RadioGroupFieldProps) => JSX.Element;
