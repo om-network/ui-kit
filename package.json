@@ -1,6 +1,6 @@
 {
   "name": "@om-network/uikit",
-  "version": "0.3.6",
+  "version": "0.3.7",
   "description": "Reusable UI components based on Headless/Tailwind UI.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
