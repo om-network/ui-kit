@@ -6,7 +6,7 @@ import { PositionType } from "../enums/positionType.enum";
 
 export interface SlideOverProps {
     onClose: () => void;
-    position: PositionType.leftmid | PositionType.rightmid;
+    position?: PositionType.leftmid | PositionType.rightmid;
     children: React.ReactNode;
 }
 
