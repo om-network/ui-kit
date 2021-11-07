@@ -40,7 +40,7 @@ export interface ListItemsFieldToolbarProps extends React.HTMLAttributes<HTMLDiv
     index: number;
     children: React.ReactNode;
 }
-export declare const FieldsetField: ({ formRef, name, value, index, itemClasses, label, placeholderLabel, urlLabel, urlPlaceholderLabel, }: ItemFieldProps) => JSX.Element;
-export declare const ListItemsFieldToolbar: ({ children, last, index, onAdd, onRemove, }: ListItemsFieldToolbarProps & ListItemsFieldDispatch) => JSX.Element;
+export declare const FieldsetField: ({ formRef, name, value, index, itemClasses, label, placeholderLabel, urlLabel, urlPlaceholderLabel }: ItemFieldProps) => JSX.Element;
+export declare const ListItemsFieldToolbar: ({ children, last, index, onAdd, onRemove }: ListItemsFieldToolbarProps & ListItemsFieldDispatch) => JSX.Element;
 export declare const ListItemsField: (props: ListItemsFieldProps & ListItemsFieldDispatch) => JSX.Element;
 export default ListItemsField;

@@ -12,9 +12,15 @@ export * from "./components/fields/ListItems.field";
 export * from "./components/fields/RadioGroup.field";
 export * from "./components/fields/Textarea.field";
 export * from "./components/fields/FileUpload.field";
+export * from "./components/fields/Select.field";
+export * from "./components/fields/Toggle.field";
 
 export * from "./components/notifications/Notifications";
 export * from "./components/notifications/Simple.notification";
+
+export * from "./components/layout/SideBar.layout";
+export * from "./components/layout/Center.layout";
+export * from "./components/layout/Layout";
 
 export * from "./components/Slide.over";
 export * from "./components/Top.over";

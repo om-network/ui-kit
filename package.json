@@ -1,6 +1,6 @@
 {
   "name": "@om-network/uikit",
-  "version": "0.3.8",
+  "version": "0.4.1",
   "description": "Reusable UI components based on Headless/Tailwind UI.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -50,6 +50,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-dropzone": "^11.3.2",
-    "react-hook-form": "^7.6.7"
+    "react-hook-form": "^7.6.7",
+    "states-us": "^1.0.1"
   }
 }

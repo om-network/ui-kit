@@ -1,9 +1,9 @@
 import classNames from "classnames";
-import React, { FunctionComponent, SelectHTMLAttributes } from "react";
-import { FieldValues, UseFormReturn } from "react-hook-form";
+import * as React from "react";
+import * as Rhf from "react-hook-form";
 
-interface SelectFieldProps extends SelectHTMLAttributes<HTMLSelectElement> {
-    formRef: UseFormReturn<FieldValues>;
+export interface SelectFieldProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
+    formRef: Rhf.UseFormReturn<Rhf.FieldValues>;
     wrapperClasses?: string;
     label: string;
     name: string;
@@ -16,7 +16,7 @@ interface SelectFieldProps extends SelectHTMLAttributes<HTMLSelectElement> {
     validationErrorLabel?: string;
 }
 
-export const SelectField: FunctionComponent<SelectFieldProps> = (props) => {
+export const SelectField: React.FunctionComponent<SelectFieldProps> = (props) => {
     const {
         formRef,
         label,

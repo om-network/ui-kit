@@ -1,19 +1,19 @@
 import classNames from "classnames";
-import React, { ButtonHTMLAttributes, FunctionComponent, MouseEvent } from "react";
-import { FieldValues, UseFormMethods } from "react-hook-form";
+import * as React from "react";
+import * as Rhf from "react-hook-form";
 
-interface ToggleFieldProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-    formRef: UseFormMethods<FieldValues>;
+export interface ToggleFieldProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+    formRef: Rhf.UseFormReturn<Rhf.FieldValues>;
     name: string;
     label: string;
     subLabel: string;
     fieldClasses?: string;
 }
 
-export const ToggleField: FunctionComponent<ToggleFieldProps> = ({ label, subLabel, name, fieldClasses = "py-3", formRef }) => {
+export const ToggleField: React.FunctionComponent<ToggleFieldProps> = ({ label, subLabel, name, fieldClasses = "py-3", formRef }) => {
     const wrapperClasses = classNames("flex items-center justify-between sm:col-span-6 border-gray-200", fieldClasses);
 
-    const { setValue, getValues, watch } = formRef;
+    const { setValue, getValues, watch, register } = formRef;
     const watchValue = watch(name) === "true" || watch(name) === true;
 
     // button classes
@@ -31,7 +31,7 @@ export const ToggleField: FunctionComponent<ToggleFieldProps> = ({ label, subLab
         "translate-x-5": watchValue
     });
 
-    const onClick = (event: MouseEvent<HTMLDivElement>) => {
+    const onClick = (event: React.MouseEvent<HTMLDivElement>) => {
         event.preventDefault();
         const value = getValues(name) === "true" || watch(name) === true;
         setValue(name, value ? "false" : "true");
@@ -43,7 +43,7 @@ export const ToggleField: FunctionComponent<ToggleFieldProps> = ({ label, subLab
                 <span className="text-sm font-medium text-gray-900">{label}</span>
                 <span className="text-xs text-gray-500">{subLabel}</span>
             </span>
-            <button name={name} ref={formRef.register} className={buttonClasses} aria-pressed="false" aria-labelledby={name}>
+            <button {...register(name)} className={buttonClasses} aria-pressed="false" aria-labelledby={name}>
                 <span className="sr-only">{label}</span>
                 <span aria-hidden="true" className={ariaClasses}></span>
             </button>

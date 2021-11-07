@@ -21,6 +21,6 @@ export interface RadioGroupFieldItemProps {
     title: string;
     description: string;
 }
-export declare const RadioGroupFieldItem: ({ formRef, title, disabled, description, itemname, name, }: RadioGroupFieldItemProps) => JSX.Element;
-export declare const RadioGroupField: ({ name, wrapperClasses: classes, heading, disabled, formRef, options, subheading, }: RadioGroupFieldProps) => JSX.Element;
+export declare const RadioGroupFieldItem: ({ formRef, title, disabled, description, itemname, name }: RadioGroupFieldItemProps) => JSX.Element;
+export declare const RadioGroupField: ({ name, wrapperClasses: classes, heading, disabled, formRef, options, subheading }: RadioGroupFieldProps) => JSX.Element;
 export default RadioGroupField;
