@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as Rhf from "react-hook-form";
 export interface TextareaFieldProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
-    formRef: Rhf.UseFormReturn<any>;
+    formRef: Rhf.UseFormReturn<Rhf.FieldValues>;
     name: string;
     label: string;
     subLabel?: string;

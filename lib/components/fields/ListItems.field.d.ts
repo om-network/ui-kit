@@ -10,7 +10,7 @@ export interface ResourceItem {
     items: Array<LinkItem>;
 }
 export interface ListItemsFieldProps extends React.HTMLAttributes<HTMLDivElement> {
-    formRef: Rhf.UseFormReturn<any>;
+    formRef: Rhf.UseFormReturn<Rhf.FieldValues>;
     name: string;
     label?: string;
     max?: number;

@@ -18,7 +18,7 @@ export const Button = (props: ButtonProps) => {
         danger,
         btn: !active && !danger
     });
-    
+
     return (
         // eslint-disable-next-line react/button-has-type
         <button {...buttonProps} className={btnClasses}>

@@ -2,7 +2,7 @@ import * as React from "react";
 import * as Rd from "react-dropzone";
 import * as Rhf from "react-hook-form";
 export interface FileUploadFieldProps {
-    formRef: Rhf.UseFormReturn<any>;
+    formRef: Rhf.UseFormReturn<Rhf.FieldValues>;
     name: string;
     label: string;
     preview?: {

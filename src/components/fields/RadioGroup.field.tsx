@@ -3,7 +3,7 @@ import * as React from "react";
 import * as Rhf from "react-hook-form";
 
 export interface RadioGroupFieldProps {
-    formRef: Rhf.UseFormReturn<any>;
+    formRef: Rhf.UseFormReturn<Rhf.FieldValues>;
     disabled?: boolean;
     name: string;
     heading: string;
