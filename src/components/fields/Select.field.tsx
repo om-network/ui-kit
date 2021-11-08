@@ -11,7 +11,7 @@ export interface SelectFieldProps extends React.SelectHTMLAttributes<HTMLSelectE
     disabled?: boolean;
     options: Array<{
         label: string;
-        value: string | number;
+        value: string;
     }>;
     validationErrorLabel?: string;
 }
