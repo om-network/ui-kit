@@ -1,7 +1,7 @@
 import * as React from "react";
-import * as Rhf from "react-hook-form";
+import { FieldValues, UseFormReturn } from "react-hook-form";
 export interface SelectFieldProps extends React.SelectHTMLAttributes<HTMLSelectElement> {
-    formRef: Rhf.UseFormReturn<Rhf.FieldValues>;
+    formRef: UseFormReturn<FieldValues>;
     wrapperClasses?: string;
     label: string;
     name: string;

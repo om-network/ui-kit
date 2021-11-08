@@ -1,5 +1,5 @@
 import * as React from "react";
-import * as Rhf from "react-hook-form";
+import { FieldValues, UseFormReturn } from "react-hook-form";
 export interface LinkItem {
     label: string;
     url: string;
@@ -10,7 +10,7 @@ export interface ResourceItem {
     items: Array<LinkItem>;
 }
 export interface ListItemsFieldProps extends React.HTMLAttributes<HTMLDivElement> {
-    formRef: Rhf.UseFormReturn<Rhf.FieldValues>;
+    formRef: UseFormReturn<FieldValues>;
     name: string;
     label?: string;
     max?: number;
@@ -25,7 +25,7 @@ export interface ListItemsFieldDispatch {
     onRemove?: (index: number) => void;
 }
 export interface ItemFieldProps extends React.FieldsetHTMLAttributes<HTMLFieldSetElement> {
-    formRef: Rhf.UseFormReturn<any>;
+    formRef: UseFormReturn<FieldValues>;
     itemClasses?: string;
     index?: number;
     name: string;

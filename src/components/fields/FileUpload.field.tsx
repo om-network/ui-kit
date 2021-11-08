@@ -2,10 +2,10 @@ import * as Hi from "@heroicons/react/outline";
 import classNames from "classnames";
 import * as React from "react";
 import * as Rd from "react-dropzone";
-import * as Rhf from "react-hook-form";
+import { FieldValues, UseFormReturn } from "react-hook-form";
 
 export interface FileUploadFieldProps {
-    formRef: Rhf.UseFormReturn<Rhf.FieldValues>;
+    formRef: UseFormReturn<FieldValues>;
     name: string;
     label: string;
     preview?: {

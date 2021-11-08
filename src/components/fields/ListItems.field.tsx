@@ -2,7 +2,7 @@ import * as Hi from "@heroicons/react/outline";
 import classNames from "classnames";
 import range from "lodash/range";
 import * as React from "react";
-import * as Rhf from "react-hook-form";
+import { FieldValues, useFieldArray, UseFormReturn } from "react-hook-form";
 
 export interface LinkItem {
     label: string;
@@ -16,7 +16,7 @@ export interface ResourceItem {
 }
 
 export interface ListItemsFieldProps extends React.HTMLAttributes<HTMLDivElement> {
-    formRef: Rhf.UseFormReturn<Rhf.FieldValues>;
+    formRef: UseFormReturn<FieldValues>;
     name: string;
     label?: string;
     max?: number;
@@ -33,7 +33,7 @@ export interface ListItemsFieldDispatch {
 }
 
 export interface ItemFieldProps extends React.FieldsetHTMLAttributes<HTMLFieldSetElement> {
-    formRef: Rhf.UseFormReturn<any>;
+    formRef: UseFormReturn<FieldValues>;
     itemClasses?: string;
     index?: number;
     name: string;
@@ -112,7 +112,7 @@ export const ListItemsFieldToolbar = ({ children, last, index, onAdd, onRemove }
 export const ListItemsField = (props: ListItemsFieldProps & ListItemsFieldDispatch) => {
     const { formRef, label, subLabel, name, max = 5, wrapperClasses, children, collapsed = false, canCollapse = false } = props;
     const [open, setOpen] = React.useState<boolean>(!collapsed);
-    const { fields, append, remove } = Rhf.useFieldArray({
+    const { fields, append, remove } = useFieldArray({
         control: formRef.control,
         name
     });

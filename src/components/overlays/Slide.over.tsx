@@ -2,10 +2,11 @@ import * as Hui from "@headlessui/react";
 import classNames from "classnames";
 import * as React from "react";
 
-import { PositionType } from "../enums/positionType.enum";
+import { PositionType } from "../../enums/positionType.enum";
 
 export interface SlideOverProps {
     onClose: () => void;
+    width?: "max-w-sm" | "max-w-md" | "max-w-full";
     position?: PositionType.leftmid | PositionType.rightmid;
     children: React.ReactNode;
 }
@@ -39,7 +40,7 @@ export const SlideOverFooter = ({ children, className = "justify-end" }: SlideOv
     <div className={classNames("flex-shrink-0 px-4 py-4 flex bg-gray-100", className)}>{children}</div>
 );
 
-export const SlideOver = ({ children, onClose, position = PositionType.leftmid }: SlideOverProps) => {
+export const SlideOver = ({ children, onClose, width = "max-w-md", position = PositionType.leftmid }: SlideOverProps) => {
     const contentClasses = classNames("fixed items-center inset-y-0 max-w-full flex", {
         "pr-16 left-0": position === PositionType.leftmid,
         "pl-16 right-0": position === PositionType.rightmid
@@ -64,7 +65,7 @@ export const SlideOver = ({ children, onClose, position = PositionType.leftmid }
                             leave="transform transition ease-in-out duration-500 sm:duration-700"
                             {...transitionProps}
                         >
-                            <div className="w-screen max-w-md">{children}</div>
+                            <div className={classNames("w-screen", width)}>{children}</div>
                         </Hui.Transition.Child>
                     </div>
                 </div>
