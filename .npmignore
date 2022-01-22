@@ -1,0 +1,10 @@
+# .npmignore
+src/
+jest.config.js
+design.drawio
+.github
+.prettierrc
+.release-it.json
+.vscode
+tsconfig.json
+.storybook
