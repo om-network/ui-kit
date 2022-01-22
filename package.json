@@ -37,7 +37,7 @@
     "@types/react-dom": "^17.0.5",
     "autoprefixer": "^9",
     "babel-loader": "^8.2.2",
-    "postcss": "^7",
+    "postcss": "^8",
     "rimraf": "^3.0.2",
     "sb": "^6.3.12",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
