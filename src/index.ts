@@ -28,3 +28,6 @@ export * from "./components/overlays/Modal";
 
 export * from "./components/Button";
 export * from "./components/Collapse";
+
+export * from "./components/forms/PostalAddress.form";
+export * from "./components/forms/Images.form";

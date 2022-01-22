@@ -17,6 +17,9 @@ interface ImagesFormProps {
         name: string;
         url: string;
     }>;
+    labelsList?: {
+        [key: string]: string;
+    };
     wrapperClasses?: string;
     options?: DropzoneOptions;
     onFileChange: (files: Array<File>) => void;
@@ -24,6 +27,9 @@ interface ImagesFormProps {
 }
 
 interface RejectedImagesProps {
+    labelsList: {
+        [key: string]: string;
+    };
     rejectedImages: Array<FileRejection>;
 }
 
@@ -36,6 +42,9 @@ interface PreviewProps {
 
 interface UploadProps {
     RootProps: DropzoneRootProps;
+    labelsList: {
+        [key: string]: string;
+    };
     isDragActive: boolean;
 }
 
@@ -68,7 +77,7 @@ const Remove: React.FunctionComponent<RemoveProps> = ({ onRemove, id, hidden = f
     );
 };
 
-const Upload: React.FunctionComponent<UploadProps> = ({ RootProps, isDragActive }) => {
+const Upload: React.FunctionComponent<UploadProps> = ({ RootProps, isDragActive, labelsList }) => {
     return (
         <li {...RootProps} className="relative focus:outline-none">
             <div className="flex justify-center px-4 py-5 border-2 border-gray-300 border-dashed rounded-md hover:border-gray-500">
@@ -82,20 +91,20 @@ const Upload: React.FunctionComponent<UploadProps> = ({ RootProps, isDragActive 
                         />
                     </svg>
                     <p className="mt-1 text-xs text-gray-600">
-                        {isDragActive && <span>{t("Drop the files here.")}</span>}
+                        {isDragActive && <span>{labelsList.dropFiles}</span>}
                         {!isDragActive && (
                             <span>
                                 <button
                                     type="button"
                                     className="font-medium text-gray-600 hover:text-gray-500 focus:outline-none focus:underline transition duration-150 ease-in-out"
                                 >
-                                    {t("Select a file ")}
+                                    {labelsList.selectFile}
                                 </button>{" "}
-                                {t("or drag and drop")}
+                                {labelsList.orDragAndDrop}
                             </span>
                         )}
                     </p>
-                    <p className="mt-1 text-xs text-gray-500">{t("PNG, JPG, GIF up to 2MB")}</p>
+                    <p className="mt-1 text-xs text-gray-500">{labelsList.filesFormat}</p>
                 </div>
             </div>
         </li>
@@ -120,7 +129,7 @@ export const Preview: React.FunctionComponent<PreviewProps> = (props) => {
     );
 };
 
-export const RejectedImages: React.FunctionComponent<RejectedImagesProps> = ({ rejectedImages }) => {
+export const RejectedImages: React.FunctionComponent<RejectedImagesProps> = ({ rejectedImages, labelsList }) => {
     const nextRejectedImages = rejectedImages.map((image) => {
         return {
             ...image,
@@ -137,17 +146,17 @@ export const RejectedImages: React.FunctionComponent<RejectedImagesProps> = ({ r
                             <thead className="bg-gray-50">
                                 <tr>
                                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        {t("File")}
+                                        {labelsList.file}
                                     </th>
                                     <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                        {t("Errors")}
+                                        {labelsList.errors}
                                     </th>
                                 </tr>
                             </thead>
                             <tbody className="bg-white divide-y divide-gray-200">
                                 <tr>
                                     <td colSpan={2}>
-                                        <p className="text-sm text-red-500 py-2 px-2">{t("Please try again. Correct the following error(s).")}</p>
+                                        <p className="text-sm text-red-500 py-2 px-2">{labelsList.correctErrors}</p>
                                     </td>
                                 </tr>
                                 {nextRejectedImages.map(({ file, preview, errors }, idx: number) => (
@@ -189,6 +198,15 @@ export const ImagesForm: React.FunctionComponent<ImagesFormProps> = ({
     options = { maxFiles: 6 },
     onFileChange,
     fieldName = "images",
+    labelsList = {
+        file: "File",
+        correctErrors: "Please try again. Correct the following error(s).",
+        errors: "Errors",
+        dropFiles: "Drop files here",
+        filesFormat: "PNG, JPG, GIF up to 2MB",
+        selectFile: "Select a file",
+        orDragAndDrop: "or drag and drop"
+    },
     previews
 }) => {
     // on drop
@@ -225,11 +243,11 @@ export const ImagesForm: React.FunctionComponent<ImagesFormProps> = ({
             <ul className={listClasses}>
                 {previews && previews.length > 0 && previews.map((preview, idx: number) => <Preview key={idx} onRemove={onRemove} {...preview} />)}
                 {range(_options.maxFiles, options.maxFiles).map((idx: number) => (
-                    <Upload key={idx} RootProps={getRootProps()} isDragActive={isDragActive} />
+                    <Upload key={idx} RootProps={getRootProps()} isDragActive={isDragActive} labelsList={labelsList} />
                 ))}
             </ul>
 
-            {fileRejections && fileRejections.length > 0 && <RejectedImages rejectedImages={fileRejections} />}
+            {fileRejections && fileRejections.length > 0 && <RejectedImages rejectedImages={fileRejections} labelsList={labelsList} />}
         </div>
     );
 };

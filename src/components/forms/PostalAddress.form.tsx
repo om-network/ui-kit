@@ -23,11 +23,7 @@ export interface PostalAddressFormProps {
     subheading?: string;
     children?: ReactNode;
     labelsList?: {
-        streetAddress: AddressLabelItem;
-        addressLocality: AddressLabelItem;
-        addressRegion: AddressLabelItem;
-        postalCode: AddressLabelItem;
-        addressCountry: AddressLabelItem;
+        [key: string]: AddressLabelItem;
     };
     countriesList?: Array<{ label: string; value: string }>;
     stateOrProvincesList: Array<{ label: string; value: string }>;
