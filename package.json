@@ -1,6 +1,6 @@
 {
   "name": "@om-network/uikit",
-  "version": "0.4.4",
+  "version": "0.4.5",
   "description": "Reusable UI components based on Headless/Tailwind UI.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -14,10 +14,14 @@
     "type": "git",
     "url": "git+https://github.com/om-network/ui-kit.git"
   },
-  "author": "Long Nguyen",
+  "author": "Patrick Thach <patrick@om.network>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/om-network/ui-kit/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "homepage": "https://github.com/om-network/ui-kit#readme",
   "devDependencies": {
