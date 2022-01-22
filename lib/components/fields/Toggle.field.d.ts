@@ -1,7 +1,7 @@
 import * as React from "react";
-import * as Rhf from "react-hook-form";
+import { FieldValues, UseFormReturn } from "react-hook-form";
 export interface ToggleFieldProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-    formRef: Rhf.UseFormReturn<Rhf.FieldValues>;
+    formRef: UseFormReturn<FieldValues>;
     name: string;
     label: string;
     subLabel: string;

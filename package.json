@@ -1,6 +1,6 @@
 {
   "name": "@om-network/uikit",
-  "version": "0.4.2",
+  "version": "0.4.5",
   "description": "Reusable UI components based on Headless/Tailwind UI.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -14,10 +14,14 @@
     "type": "git",
     "url": "git+https://github.com/om-network/ui-kit.git"
   },
-  "author": "Long Nguyen",
+  "author": "Patrick Thach <patrick@om.network>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/om-network/ui-kit/issues"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "homepage": "https://github.com/om-network/ui-kit#readme",
   "devDependencies": {
@@ -47,10 +51,10 @@
     "@tailwindcss/typography": "^0.4.1",
     "classnames": "^2.3.1",
     "lodash.range": "^3.2.0",
+    "prettysize": "^2.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-dropzone": "^11.3.2",
-    "react-hook-form": "^7.6.7",
-    "states-us": "^1.0.1"
+    "react-hook-form": "^7.6.7"
   }
 }
